@@ -7,9 +7,7 @@ window.onload = function() {
 function getProducts() {
     fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
-            .then(json=> products = json)
-    
-    console.log(products)
+            .then(json=> console.log(json))
 }
 
 function getProduct(id){
