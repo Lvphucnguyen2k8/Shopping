@@ -3,22 +3,6 @@ window.onload = function() {
     getProducts()
 }
 
-// function addProduct() {
-//     console.log("ccgtguj")
-//     var node = document.createElement("div")
-//     var add = document.createTextNode("Chuyencute");
-//     node.appendChild(add);
-//     document.getElementById("myList").append(node)
-// }
-// function addTest() {
-//     var myTable = document.getElementById("test");
-//     var myTd = document.createElement("td");
-//     myTable.appendChild(myTd);
-// }
-function test() {
-    var a = document.getElementById("tr");
-    console.log(a)
-}
 function getProducts() {
     fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
@@ -40,8 +24,6 @@ function getProducts() {
                 // console.log(json[0])
             })
 }
-
-
 
 function getProduct(id){
 
