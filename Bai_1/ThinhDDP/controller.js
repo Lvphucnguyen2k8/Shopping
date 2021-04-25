@@ -21,12 +21,17 @@ function createRow(object){
     var td = document.createElement("TD");
     var td2 = document.createElement("TD");
     var td3 = document.createElement("TD");
+    var img = document.createElement("IMG");
+    var imgContainer = document.createElement("TD");
+    imgContainer.appendChild(img);
+    img.src = object.image;
     td.innerHTML = object.id;
     td2.innerHTML = object.title;
     td3.innerHTML = object.price;
     tr.appendChild(td);
     tr.appendChild(td2);
     tr.appendChild(td3);
+    tr.appendChild(imgContainer);
     document.getElementById("table").appendChild(tr);
 }
 
@@ -34,7 +39,6 @@ function handleData(json){
     createTable();
     for (var i = 0; i < json.length; ++i){
         createRow(json[i]);
-        debugger;
         sum += json[i].price;
         discount += (i <= 9 ? (json[i].price - json[i].price * 0.2) : ((i > 9 && i <= 11) ? 0 : json[i].price));
     }
