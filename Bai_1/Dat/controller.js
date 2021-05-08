@@ -64,9 +64,12 @@ var buyTotalReduced = () =>{
     json.forEach(element =>{
         arrPrices.push(element.price)
     })
-    for(let i = 0; i < i + 9; i++){
+    for(let i = 0; i < i + 5; i++){
         arrPrices[i] *= 1/2
         
+    }
+    for(let i =0; i < i+5 + 5; i++){
+        arrPrices[i] *= 0.2
     }
     for(let i = 10; i < i + 1; i++){
         arrPrices[i] = 0;
