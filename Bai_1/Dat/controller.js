@@ -65,7 +65,7 @@ var buyTotalReduced = () =>{
         arrPrices.push(element.price)
     })
     for(let i = 0; i < i + 9; i++){
-        arrPrices[i] *= 80/100
+        arrPrices[i] *= 1/2
         
     }
     for(let i = 10; i < i + 1; i++){
