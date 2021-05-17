@@ -9,6 +9,7 @@ window.onload = () => {
     getProducts()
 };
 
+
 var scope = () => {
     // if (true) {
     //     var foo = 'Buoi!';
@@ -24,10 +25,10 @@ var scope = () => {
     // console.log(bar);
     // console.log(baz);
 
-    //const greetingConst2 = {     message : "Hello",     number : "five" };
-    //greetingConst2 = {}; 
-    //greetingConst2.message = "say Hello instead";
-    //console.log(greetingConst2);
+    // const greetingConst2 = {     message : "Hello",     number : "five" };
+    // greetingConst2 = {}; 
+    // greetingConst2.message = "say Hello instead";
+    // console.log(greetingConst2);
 }
     
 var assign2Object = () => {
@@ -90,17 +91,17 @@ var spread2Object = () => {
 }
 
 var spreadSum = () => {
-    let numbers = [
-        1,
-        4,
-        11,
-        6,
-        2,
-        4,
-        7,
-        0
-    ]
-    console.log(Math.max(...numbers))
+    // let numbers = [
+    //     1,
+    //     4,
+    //     11,
+    //     6,
+    //     2,
+    //     4,
+    //     7,
+    //     0
+    // ]
+    // console.log(Math.max(...numbers))
 }
 
 var onMap = () => {

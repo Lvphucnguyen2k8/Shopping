@@ -8,8 +8,8 @@ function getProducts() {
             .then(res=>res.json())
             .then(json=> {
                 var list = document.getElementById("tr");
-                let str='';
-                json.forEach(element => {
+                // let str='';
+                json.map(element => {
                     str+=`<tr>
                         <td>${element.id}</td>
                         <td>${element.category}</td>
