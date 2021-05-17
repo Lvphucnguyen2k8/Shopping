@@ -1,140 +1,56 @@
-window.onload = () => {
-    console.log("Hello")
-    scope()
-    assign2Object()
-    spread2Array()
-    spread2Object()
-    spreadSum()
-    onMap()
-    getProducts()
-};
+var product = 1;
+var sum = 0;
+var discount = 0;
 
-var scope = () => {
-    // if (true) {
-    //     var foo = 'Buoi!';
-    //     let bar = 'Cam!';
-    //     const baz = 'Quyt!';
-
-    //     console.log(foo);
-    //     console.log(bar);
-    //     console.log(baz);
-    // }
-
-    // console.log(foo);
-    // console.log(bar);
-    // console.log(baz);
-
-    //const greetingConst2 = {     message : "Hello",     number : "five" };
-    //greetingConst2 = {}; 
-    //greetingConst2.message = "say Hello instead";
-    //console.log(greetingConst2);
-}
-    
-var assign2Object = () => {
-    // const target = {
-    //     a: 1,
-    //     b: 2
-    // };
-    // const source = {
-    //     b: 4,
-    //     c: 5
-    // };
-
-    // const returnedTarget = Object.assign(target, source);
-
-    // console.log(target);
-
-    // console.log(source);
-
-    // console.log(returnedTarget);
+function createTable(){
+    var tr = document.createElement("TR");
+    var th = document.createElement("TH");
+    var th2 = document.createElement("TH");
+    var th3 = document.createElement("TH");
+    th.innerHTML = "ID";
+    th2.innerHTML = "Title";
+    th3.innerHTML = "Price";
+    tr.appendChild(th);
+    tr.appendChild(th2);
+    tr.appendChild(th3);
+    document.getElementById("table").appendChild(tr);
 }
 
-var spread2Array = () => {
-    // let arr1 = [1, 2, 3, 4]
-    // let arr2 = [5, 6, 7, 8]
-    // let concat = [
-    //     ...arr1,
-    //     ...arr2
-    // ]
-    // console.log(arr1)
-    // console.log(arr2)
-    // console.log(concat)
-
-    // let concat2 = [
-    //     arr1,
-    //     ...arr2
-    // ]
-    // console.log(concat2)
-
+function createRow(object){
+    var tr = document.createElement("TR");
+    var td = document.createElement("TD");
+    var td2 = document.createElement("TD");
+    var td3 = document.createElement("TD");
+    var img = document.createElement("IMG");
+    var imgContainer = document.createElement("TD");
+    imgContainer.appendChild(img);
+    img.src = object.image;
+    td.innerHTML = object.id;
+    td2.innerHTML = object.title;
+    td3.innerHTML = object.price;
+    tr.appendChild(td);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(imgContainer);
+    document.getElementById("table").appendChild(tr);
 }
 
-var spread2Object = () => {
-    // let obj1 = {
-    //     a: 1,
-    //     b: 2,
-    //     c: 3
-    // }
-    // let obj2 = {
-    //     d: 4,
-    //     e: 5,
-    //     f: 6
-    // }
-
-    // let merge = {
-    //     ...obj1,
-    //     ...obj2
-    // }
-    // console.log(obj1)
-    // console.log(obj2)
-    // console.log(merge)
+function handleData(json){
+    createTable();
+    for (var i = 0; i < json.length; ++i){
+        createRow(json[i]);
+        sum += json[i].price;
+        discount += (i <= 9 ? (json[i].price - json[i].price * 0.2) : ((i > 9 && i <= 11) ? 0 : json[i].price));
+    }
+    createRow({id: "", title: "Sum", price: sum.toFixed(2)})
+    createRow({id: "", title: "Sum Discounted", price: (discount).toFixed(2)});
 }
 
-var spreadSum = () => {
-    let numbers = [
-        1,
-        4,
-        11,
-        6,
-        2,
-        4,
-        7,
-        0
-    ]
-    console.log(Math.max(...numbers))
-}
 
-var onMap = () => {
-    // const numbers = [1, 2, 3, 4];
-    // const doubled = numbers.map(item => item * 2);
-    // console.log(doubled); // [2, 4, 6, 8]
+function getUserData(){
+        fetch(`https://fakestoreapi.com/products/`)
+            .then(response => response.json())
+            .then(json => handleData(json));
+    }
 
-    // const evens = numbers.filter(item => item % 2 === 0);
-    // console.log(evens); // [2, 4]
-}
-
-var callAPI = () => {
-    // fetch('https://fakestoreapi.com/products')
-    //     .then(res => res.json())
-    //     .then(json => {
-    //         console.log(json)
-    //     })
-}
-
-var getProducts = () => {
-    // fetch('https://fakestoreapi.com/products')
-    //     .then((res) => res.json())
-    //     .then((json) => {
-    //         let str = '';
-    //         json.forEach(element => {
-    //             str += `<tr>
-    //                     <td>${element.id}</td>
-    //                     <td>${element.title}</td>
-    //                     <td>${element.image}</td>                       
-    //                     <td>${element.price}</td>
-    //                 </tr>`
-    //         });
-    //         document
-    //             .getElementById("products")
-    //             .innerHTML += str;
-    //     })
-}
+getUserData();

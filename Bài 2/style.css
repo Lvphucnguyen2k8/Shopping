@@ -1,0 +1,9 @@
+table, th, td {
+    border: 1px solid black;
+    padding: 0.5vh 1vw;
+  }
+
+img {
+    width: 10vw;
+    height: fit-content;
+}
