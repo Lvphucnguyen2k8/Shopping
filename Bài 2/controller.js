@@ -107,4 +107,3 @@ function getData(url){
 }
 
 getData(url)
-    .then(results => console.log(results))
