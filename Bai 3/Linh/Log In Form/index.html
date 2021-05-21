@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shit</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div id="LoginForm">
+      <div class="LoginTable">
+        <div class="LoginBackground">
+          <div class="logInText">
+            <span class="loginHeader">Đăng Nhập</span>
+            <p>Privacy policy & terms of service</p>
+          </div>
+        </div>
+        <div class="realLoginTable">
+          <div>
+            <div class="thisIsAnInput">
+              <input
+                type="input"
+                class="field"
+                placeholder="Tên Đăng Nhập"
+                id="loginName"
+               
+              />
+              <label for="name" class="label">Tên Đăng Nhập</label>
+              <small class="required" id="loginUser" style="display: none"
+                >Tên đăng nhập không được để trống</small
+              >
+            </div>
+            <div class="thisIsAnInput">
+              <input
+                type="password"
+                class="field"
+                placeholder="Mật Khẩu"
+                id="loginPassword"
+              />
+              <label for="name" class="label">Mật Khẩu</label>
+              <small class="required" id="loginPass" style="display: none"
+                >Mật khẩu đăng nhập không được để trống</small
+              >
+            </div>
+            <div class="LGbtn">
+              <input
+                type="button"
+                id="loginBtn"
+                value="Đăng Nhập"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./controller.js"></script>
+</html>
