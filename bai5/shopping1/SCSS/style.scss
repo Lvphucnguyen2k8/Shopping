@@ -1,0 +1,12 @@
+.ctn {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    padding-left: 30px;
+}
+.card {
+    margin: 30px 20px 0px 0px;
+    width: 23%;
+    height: fit-content;
+}
