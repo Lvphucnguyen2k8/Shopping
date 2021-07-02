@@ -1,0 +1,66 @@
+<div style="margin-top: -30px;">
+        <link rel="stylesheet" type="text/css" href="../CSS/Login.css" />
+        
+        <div id="LoginForm" style="height: 680px;">
+            <div class="LoginTable">
+                <div class="LoginBackground">
+                    <div class="logInText">
+                        <span class="loginHeader">Đăng Nhập</span>
+                        <p>Privacy policy & terms of service</p>
+                    </div>
+                </div>
+                <div class="realLoginTable">
+                    <div>
+                        <div class="inputDiv">
+                            <div class="thisIsAnInput">
+                                <input type="input" class="field" placeholder="email" id="loginEmail">
+                                <label for="name" class="label">
+                                    Email
+                                </label>
+                                <small class="required" id="usernameErrorText" style="display: none;">
+                                    Email sai
+                                </small>
+                            </div>
+                            <div class="thisIsAnInput">
+                                <input type="input" class="field" placeholder="Mật khẩu" id="loginPassword">
+                                <label for="name" class="label">
+                                    Mật khẩu
+                                </label>
+                                <small class="required" id="passwordErrorText" style="display: none;">
+                                    Mật khẩu sai
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="LGbtn">
+                        <input type="button" id="loginBtn" value="Đăng Nhập" onclick="inputChecker()" />
+                    </div>
+                    <div class="signupText">
+                        <p>Hoặc</p>
+                        <div class="socialMedia" style="display:flex; justify-content:center">
+                            <div id="google" class="socialMedia-brand google ">
+                                <div>
+                                    <img src="../ASSETS/Google.jpg" alt="" height="40px;" style="margin-top: 0.75px;">
+                                </div>
+                                <div
+                                    style="height: 100%; width:100%; display:flex; align-items:center; justify-content:center;">
+                                    Google
+                                </div>
+                            </div>
+                            <div id="facebook" class="socialMedia-brand facebook">
+                                <div>
+                                    <img src="../ASSETS/Facebook.webp" alt="" height="30px;"
+                                        style="margin-top: 0.75px; margin-left: 3px;">
+                                </div>
+                                <div
+                                    style="height: 100%; width:100%; display:flex; align-items:center; justify-content:center;">
+                                    Facebook
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+</div>
